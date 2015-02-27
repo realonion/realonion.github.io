@@ -14,7 +14,7 @@
             name: "Dodecahedron",
             price: 2.95,
             description: 'a nice gem',
-            soldout: true,
+            soldout: false,
             canpurchase: false
         },
         {
