@@ -3,6 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
-var app = angular.module("GemStore", []);
+(function(){
+    var app = angular.module("GemStore", []);
+    app.controller("StoreController", function(){
+        this.product = gem;
+    });
+    
+    var gem = {
+        name: "Dodecahedron",
+        price: 2.95,
+        description: 'a nice gem'
+        
+    };
+})();
