@@ -16,7 +16,7 @@
                 .then(data => {
                     usdZarJson = data;
                     //Get the top 100 bids and asks
-                    return fetch("https://api.luno.com/api/1/orderbook_top?pair=XBTZAR");
+                    return fetch("https://api.luno.com/api/1/orderbook_top?pair=XBTZAR", { mode: 'no-cors' });
                 })
                 .then(orderbook => {
                     console.log(orderbook);
