@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Magic Number</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            fetch('https://www.bitstamp.net/api/v2/ticker/btcusd/') //Get BTCUSD
+                .then(btcUsd => btcUsd.json())
+                .then(data => {
+                    btcUsdJson = data;
+                    //Get USDZAR
+                    return fetch("https://free.currconv.com/api/v7/convert?q=USD_ZAR&compact=ultra&apiKey=06dddcd6ae53bd239733");
+                })
+                .then(usdZar => usdZar.json())
+                .then(data => {
+                    usdZarJson = data;
+                    //Get the top 100 bids and asks
+                    return fetch("https://api.luno.com/api/1/orderbook_top?pair=XBTZAR");
+                })
+                .then(orderbook => {
+                    console.log(orderbook);
+                    // orderbookJson = data;
+                    // console.log(btcUsdJson);
+                    // console.log(usdZarJson);
+                    // console.log(orderbookJson);
+                })                
+                ;     
+            
+        </script>
+    </head>
+    <body>
+        <div id="number"></div>
+    </body>
+</html>
